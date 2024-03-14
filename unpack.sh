@@ -1,12 +1,41 @@
 ba() {
 tof unpack
 }
+unf() {
+	random
+	printf "\n Already created\n"
+	}
+	crf() {
+		random
+		printf "\n Creating your folder..\n"
+		}
 sp() {
+	cd ~
+	if [ -e setup ];then
+	random
+	printf "\n Already cloned\n"
+	else
+	random
+	printf "\nCloning....\n"
+	cd ~
 	git clone https://github.com/rooted-cyber/setup
 	cd ~/setup
 	bash set.sh
+	fi
 	cd ~
-	mkdir ~/Unpack ~/Repack
+	if [ -e Unpack ];then
+	unf
+	else
+	crf
+	mkdir ~/Unpack
+	fi
+	cd ~
+	if [ -e Repack ];then
+	unf
+	else
+	crf
+	mkdir ~/Repack
+	fi
 	}
 unp() {
 	cd  ~/Unpack
@@ -23,6 +52,7 @@ unp() {
 	cp -rf A*I*K ~/Unpack
 	printf "copy \033[0m boot.img/recovery.img in ~/Unpack\n"
 	cd  ~/Unpack
+	read
 	if [ -e *img ];then
 	cd ~/Unpack
 	random
