@@ -48,8 +48,8 @@ unp() {
 	exit
 	fi
 	random
-	cd ~
-	cp -rf A*I*K ~/Unpack
+	cd ~/A*I*
+	cp -rf bin *sh ~/Unpack
 	printf "copy \033[0m boot.img/recovery.img in ~/Unpack\n"
 	cd  ~/Unpack
 	read
